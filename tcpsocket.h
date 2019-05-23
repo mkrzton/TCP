@@ -14,7 +14,7 @@ class TcpSocket : public QObject{
 
 public:
 
-    explicit TcpSocket(QObject *parent = 0);
+    explicit TcpSocket(QObject *parent = nullptr);
     void EstablishConnection();
 
 signals:
