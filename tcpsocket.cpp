@@ -30,21 +30,11 @@ void TcpSocket::connected(){
     socket->write("HEAD / HTTP/1.0\r\n\r\n\r\n\r\n");
 }
 
-void TcpSocket::disconnected(){
-
-    qDebug() << "Disconnected";
-}
-
-void TcpSocket::bytesWritten(qint64 bytes){
-
-    qDebug() << bytes << " bytes written...";
-}
-
 void TcpSocket::readyRead(){
 
     qDebug() << "Writing to file";
 
-    QFile *f = new QFile("C:/Users/Marcin/Documents/TCPSocket/http.txt");
+    QFile *f = new QFile("C:/Users/Marcin/Documents/TCPSocket/tcp.txt");
 
     if(f->open(QFile::Append)){
 
@@ -55,3 +45,14 @@ void TcpSocket::readyRead(){
 
     delete f;
 }
+void TcpSocket::bytesWritten(qint64 bytes){
+
+    qDebug() << "Number of bytes written: " <<bytes ;
+}
+
+
+void TcpSocket::disconnected(){
+
+    qDebug() << "Disconnected";
+}
+
